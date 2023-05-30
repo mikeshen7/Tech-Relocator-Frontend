@@ -34,7 +34,8 @@ fig = go.Figure(
             center=dict(lat=user_lat, lon=user_lon),
             zoom=5,
         ),
-        autosize=True
+        autosize=True,
+        # legend=dict(x=1, y=0.5),
     )
 )
 
@@ -47,7 +48,8 @@ fig.update_layout(
         b=0,
         t=0,
         pad=0,
-    )
+    ),
+    showlegend=False,
 )
 
 

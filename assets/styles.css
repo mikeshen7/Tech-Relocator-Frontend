@@ -49,7 +49,7 @@
     flex-direction: column;
   }
 
-  .infolayer {
+  #\33 d-scatter-plot > div.js-plotly-plot > div > div > svg:nth-child(3) > g.infolayer > g.legend {
     display: none
   }
 
