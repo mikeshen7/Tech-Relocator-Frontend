@@ -36,7 +36,7 @@ col_table = dbc.Row(
                 className="table-container mb-4",
             ),
             id="table-collapse",
-            is_open=True,
+            is_open=False,
         ),
     ]
 )

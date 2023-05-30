@@ -69,7 +69,7 @@ chart = dbc.Row(
                 className="w-100 mb-4"
             ),
             id="chart-collapse",
-            is_open=True,
+            is_open=False,
         ),
     ]
 )
