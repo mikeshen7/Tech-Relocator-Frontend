@@ -48,4 +48,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  .infolayer {
+    display: none
+  }
+
+
 }
