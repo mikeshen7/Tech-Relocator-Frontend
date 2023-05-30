@@ -41,7 +41,7 @@ search = dbc.Row(
                 className="w-100 mx-2 search-field-container mb-4"
             ),
             id="search-collapse",
-            is_open=True,
+            is_open=False,
         ),
     ]
 )

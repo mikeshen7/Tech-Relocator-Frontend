@@ -70,7 +70,7 @@ job_map = dbc.Row(
                 )
             ],
             id='map-collapse',
-            is_open=True,
+            is_open=False,
         ),
     ]
 )
