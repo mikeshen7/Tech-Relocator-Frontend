@@ -18,6 +18,7 @@ environ.Env.read_env()
 # ********************************* DASH APP *********************************
 app = Dash(__name__, external_stylesheets=[
            dbc.themes.VAPOR, "/assets/styles.css"])
+app.title = "Tech Relocator"
 server = app.server
 
 
