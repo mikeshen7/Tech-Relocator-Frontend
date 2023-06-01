@@ -21,13 +21,15 @@
 }
 
 .table-container {
-  max-height: 400px;
+  max-height: 300px;
   overflow-y: scroll;
 }
 
 .test {
   border: 5px solid red;
 }
+
+
 
 
 @media (max-width: 768px) {

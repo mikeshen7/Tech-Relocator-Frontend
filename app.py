@@ -1,18 +1,12 @@
 from dash import Dash, html, dcc, callback, Output, Input, State
 import plotly.graph_objects as go
-import environ
 import dash_bootstrap_components as dbc
-from data import df_job_data, df_col_data, user_lat, user_lon, user_location_string
-from map import job_map, toggle_map, update_map
-from col import col_table, toggle_table, update_table
-from search import search, toggle_search
-from chart import chart, toggle_chart
-
-# ********************************* ENV SETUP *********************************
-env = environ.Env(
-    DEBUG=(bool, False),
-)
-environ.Env.read_env()
+from data import data
+from map import job_map
+from col import col_table
+from search import search
+from chart import chart
+from footer import footer
 
 
 # ********************************* DASH APP *********************************
@@ -39,10 +33,12 @@ app.layout = html.Div(
             [
                 dbc.Col(
                     (
+                        data,
                         search,
                         job_map,
                         col_table,
                         chart,
+                        footer,
                     ),
                     style={"min-width": "200px"},
                 ),
