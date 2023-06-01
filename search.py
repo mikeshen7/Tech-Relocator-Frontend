@@ -65,7 +65,7 @@ search = dbc.Row(
                             dbc.Row(
                                 [
                                     html.Label("Cost of Living Adjustment:"),
-                                    html.Div(id='col-toggle-output')
+                                    html.Div(id='col-toggle-output'),
                                 ],
                             )
                         ),
