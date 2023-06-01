@@ -1,6 +1,17 @@
 from dash import Dash, html, dcc, callback, Output, Input, State
 import dash_bootstrap_components as dbc
-from data import df_job_data, df_col_data, user_lat, user_lon, user_location_string
+import dash_daq as daq
+
+
+col_toggle_button = html.Div(
+    [
+        daq.ToggleSwitch(
+            id='col-toggle',
+            value=False,
+        ),
+        html.Div(id='col-toggle-output')
+    ]
+)
 
 
 search = dbc.Row(
@@ -11,35 +22,59 @@ search = dbc.Row(
             className="mb-3",
         ),
         dbc.Collapse(
-            html.Div(
-                [
-                    dbc.Input(
-                        id="state-input",
-                        type="text",
-                        placeholder="State",
-                        className="search-field"
-                    ),
-                    dbc.Input(
-                        id="city-input",
-                        type="text",
-                        placeholder="City",
-                        className="search-field"
-                    ),
-                    dbc.Input(
-                        id="title-input",
-                        type="text",
-                        placeholder="Title",
-                        className="search-field"
-                    ),
-                    dbc.Input(
-                        id="skills-input",
-                        type="text",
-                        placeholder="Skills",
-                        className="search-field"
-                    ),
-                ],
-                className="w-100 mx-2 search-field-container mb-4"
-            ),
+            [
+                html.Div(
+                    [
+                        dbc.Input(
+                            id="state-input",
+                            type="text",
+                            placeholder="State",
+                            className="search-field"
+                        ),
+                        dbc.Input(
+                            id="city-input",
+                            type="text",
+                            placeholder="City",
+                            className="search-field"
+                        ),
+                        dbc.Input(
+                            id="title-input",
+                            type="text",
+                            placeholder="Title",
+                            className="search-field"
+                        ),
+                        dbc.Input(
+                            id="skills-input",
+                            type="text",
+                            placeholder="Skills",
+                            className="search-field"
+                        ),
+                    ],
+                    className="w-100 mx-2 search-field-container mb-4"
+                ),
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            daq.ToggleSwitch(
+                                id='col-toggle',
+                                value=False
+                            ),
+                            width="auto"
+                        ),
+                        dbc.Col(
+                            dbc.Row(
+                                [
+                                    html.Label("Cost of Living Adjustment:"),
+                                    html.Div(id='col-toggle-output')
+                                ],
+                            )
+                        ),
+                    ],
+                    className="m-3",
+                    justify="start",
+                    align="center"
+                )
+            ],
             id="search-collapse",
             is_open=False,
         ),
