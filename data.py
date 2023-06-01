@@ -4,6 +4,7 @@ import requests
 import geocoder
 from dash import Dash, html, dcc, callback, Output, Input, State
 import dash_bootstrap_components as dbc
+import time
 
 
 # ********************************* ENV SETUP *********************************
@@ -127,6 +128,8 @@ def filter_data(state, city, title, skills, col_value):
             elif state in df_col_data['state'].values:
                 col_index = df_col_data.loc[df_col_data['state']
                                             == state, 'index'].iloc[0]
+            else:
+                col_index = 100
 
             filtered_job_data.at[index, 'salary_avg'] = round(
                 (row['salary_avg'] * 100 / col_index))
@@ -171,3 +174,11 @@ def get_geolocation(date, pos):
     }
 
     return location_string, location_json
+
+@callback(  # Loading icon callback
+    Output("ls-loading-output-1", "children"),
+    Input("filtered_job_data", "data"),
+)
+def loading_icon(job_data):
+    time.sleep(0.5)
+    return ""

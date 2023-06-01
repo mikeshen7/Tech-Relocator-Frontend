@@ -21,6 +21,12 @@ app.layout = html.Div(
     [
         html.Div(
             [
+                dcc.Loading(
+                    id="ls-loading-2",
+                    children=[html.Div([html.Div(id="ls-loading-output-1")])],
+                    type="circle",
+                    className='loading-indicator',
+                ),
                 html.H1(
                     "Tech Relocators",
                     className="align-bottom w-100 p-2 text-center",

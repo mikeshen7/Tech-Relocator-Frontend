@@ -29,7 +29,9 @@
   border: 5px solid red;
 }
 
-
+.loading-indicator {
+  margin-left: 50px;  /* Adjust the value to move the indicator further to the right */
+}
 
 
 @media (max-width: 768px) {
