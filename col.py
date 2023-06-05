@@ -2,7 +2,6 @@ from dash import Dash, html, dcc, callback, Output, Input, State
 import dash_bootstrap_components as dbc
 from data import df_job_data, df_col_data, df_col_city_data
 
-
 # ********************************* DASH COMPONENTS *********************************
 state_table = dbc.Table(
     [
@@ -17,7 +16,9 @@ state_table = dbc.Table(
                 html.Th("Transportation", className="cell"),
                 html.Th("Health", className="cell"),
                 html.Th("Misc", className="cell"),
-            ])
+            ],
+                className="table-danger"
+            )
         ]),
         # Table body
         html.Tbody(id="state-table-body"),
@@ -35,7 +36,9 @@ city_table = dbc.Table(
                 html.Th("City", className="cell"),
                 html.Th("State", className="cell"),
                 html.Th("Index", className="cell"),
-            ])
+            ],
+                className="table-danger"
+            )
         ]),
         # Table body
         html.Tbody(id="city-table-body"),
@@ -44,7 +47,6 @@ city_table = dbc.Table(
     hover=True,
     responsive=True,
 )
-
 
 col_table = dbc.Row(
     [
@@ -88,7 +90,6 @@ col_table = dbc.Row(
         ),
     ]
 )
-
 
 
 # ********************************* CALLBACKS *********************************
