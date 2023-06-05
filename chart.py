@@ -32,12 +32,12 @@ def create_figure(dataset):
             xaxis_title='Months Experience',
             yaxis_title='Latitude',
             zaxis_title='Salary',
-            bgcolor='rgb(51,255,255)',
+            bgcolor='rgb(255,204,229)',
         ),
         autosize=True,
         margin=dict(l=0, r=0, t=0, b=0),
         scene_aspectmode='auto',
-        showlegend=False,
+        showlegend=True,
     )
     return fig
 

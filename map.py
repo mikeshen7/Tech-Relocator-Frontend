@@ -58,7 +58,7 @@ def create_figure(dataset):
         ],
         layout=go.Layout(
             mapbox=dict(
-                style='mapbox://styles/mapbox/dark-v10',
+                style='mapbox://styles/mapbox/streets-v10',
                 accesstoken=env('MAPBOX'),
                 center=dict(lat=user_lat, lon=user_lon),
                 zoom=5,

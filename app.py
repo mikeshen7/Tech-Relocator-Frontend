@@ -11,7 +11,7 @@ from footer import footer
 
 # ********************************* DASH APP *********************************
 app = Dash(__name__, external_stylesheets=[
-           dbc.themes.VAPOR, "/assets/styles.css"])
+           dbc.themes.MORPH, "/assets/styles.css"])
 app.title = "Tech Relocator"
 server = app.server
 
@@ -19,6 +19,7 @@ server = app.server
 # ********************************* DASH LAYOUT *********************************
 app.layout = html.Div(
     [
+        # Loading and Title
         html.Div(
             [
                 dcc.Loading(
@@ -33,6 +34,27 @@ app.layout = html.Div(
                 ),
             ],
             className='d-flex',
+        ),
+        # Alert for users
+        html.Div(
+            className="alert alert-dismissible alert-info",
+            children=[
+                html.Button(type="button", className="btn-close", **{"data-bs-dismiss": "alert"}),
+                html.Strong("We only use your location for visual purposes!"),
+                " Otherwise ",
+                html.A("you will default to Seattle, WA", href="#", className="alert-link"),
+                ", if you block this feature. Enjoy."
+            ]
+        ),
+        # Introduction
+        html.Div(
+            children=[
+                html.Strong("Welcome to Tech Relocators", className="header-title"),
+                html.P(
+                    "At Tech Relocator, we aim to simplify your job search in the tech industry and provide you with valuable insights into the cost of living across different cities in the USA. Our platform is designed to help tech professionals like you make informed decisions when relocating for new job opportunities. Using data analyst with interactive 3d models.",
+                    className="header-text"
+                )
+            ]
         ),
 
         dbc.Row(
